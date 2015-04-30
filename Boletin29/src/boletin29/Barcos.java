@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package boletin29;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author dreylopez
- */
+
 public abstract class Barcos {
 
     private int eslora;
@@ -19,6 +12,30 @@ public abstract class Barcos {
     private String alquiler;
 
     public Barcos() {
+    }
+
+    public int getDias() {
+        return dias;
+    }
+
+    public void setDias(int dias) {
+        this.dias = dias;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getAlquiler() {
+        return alquiler;
+    }
+
+    public void setAlquiler(String alquiler) {
+        this.alquiler = alquiler;
     }
 
     public Barcos(int eslora) {

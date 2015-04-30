@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package boletin29;
 
 import javax.swing.JOptionPane;
 
 
-/**
- *
- * @author dreylopez
- */
+
 public class Yate extends Barcos {
 
     private int potencia;
@@ -53,7 +46,7 @@ public class Yate extends Barcos {
 
     @Override
     public String toString() {
-        return "Yate{" + "potencia=" + potencia + ", camarotes=" + camarotes + '}';
+        return "Matrícula: " + super.getMatricula() + "\n Eslora: " + super.getEslora() + "Alquiler: " + super.getAlquiler() + "Días" + super.getDias() + "Potencia: " + potencia + "Potencia: " + camarotes;
     }
 
  
