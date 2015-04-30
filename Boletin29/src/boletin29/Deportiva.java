@@ -5,14 +5,15 @@
  */
 package boletin29;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
+
+
 
 /**
  *
  * @author dreylopez
  */
-public class Deportiva extends Embarcacion {
+public class Deportiva extends Barcos {
 
     private int potencia;
 
@@ -26,15 +27,11 @@ public class Deportiva extends Embarcacion {
 
     }
 
-    public int calculo(int year, int mes, int dia) throws PropiaExcepcion {
-        Calendar ca1 = new GregorianCalendar();
-        ca1.set(year, mes - 1, dia);
-        GregorianCalendar ca2 = new GregorianCalendar();
-        long dias = (ca2.getTimeInMillis() - ca1.getTimeInMillis()) / 1000 / 60 / 60 / 24;
-        if (dias < 0) {
-            throw new PropiaExcepcion("No se pueden introducir días posteriores a la fecha actual");
-        }
-        int precio = (int) dias * ((10 * getEslora()) + potencia);
+    public int calculo() {
+      int dias;
+      dias=Integer.parseInt(JOptionPane.showInputDialog("Dias"));
+        
+        int precio = (int) dias * (10 * getEslora() + potencia);
         return precio;
 
     }
@@ -46,6 +43,12 @@ public class Deportiva extends Embarcacion {
     public void setPotencia(int potencia) {
         this.potencia = potencia;
     }
+
+    @Override
+    public String toString() {
+        return "Deportiva{" + "potencia=" + potencia + '}';
+    }
+    
 
     
 }

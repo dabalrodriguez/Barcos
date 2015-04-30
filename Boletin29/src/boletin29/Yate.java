@@ -5,14 +5,14 @@
  */
 package boletin29;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author dreylopez
  */
-public class Yate extends Embarcacion {
+public class Yate extends Barcos {
 
     private int potencia;
     private int camarotes;
@@ -28,14 +28,9 @@ public class Yate extends Embarcacion {
 
     }
 
-    public int calculo(int year, int mes, int dia)throws PropiaExcepcion {
-        Calendar ca1 = new GregorianCalendar();
-        ca1.set(year, mes - 1, dia);
-        GregorianCalendar ca2 = new GregorianCalendar();
-        long dias = (ca2.getTimeInMillis() - ca1.getTimeInMillis()) / 1000 / 60 / 60 / 24;
-        if (dias < 0) {
-            throw new PropiaExcepcion("No se pueden introducir días posteriores a la fecha actual");
-        }
+    public int calculo(){
+      int dias;
+      dias=Integer.parseInt(JOptionPane.showInputDialog("Dias"));
         int precio = (int) dias * ((10 * getEslora()) + potencia + camarotes);
         return precio;
     }
@@ -55,6 +50,14 @@ public class Yate extends Embarcacion {
     public void setCamarotes(int camarotes) {
         this.camarotes = camarotes;
     }
+
+    @Override
+    public String toString() {
+        return "Yate{" + "potencia=" + potencia + ", camarotes=" + camarotes + '}';
+    }
+
+ 
+    
 
     
 }
